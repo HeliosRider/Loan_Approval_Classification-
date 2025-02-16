@@ -1,28 +1,6 @@
-# Home Sale Challenge
+# Project Four Assignment
 
-## Task
-
-    - Using SparkSQL, the analyst will to determine key metrics about the given home sales data 
-   
-    - Use Spark to:
-
-        * create temporary views
-
-        * Partition the data
-
-        * Cache and uncache a temporary table and verify that the table has been uncached
-
-# Data Engineering: Libraries and Dependencies
-
-    -AWS S3 bucket
-
-    -findspark
-
-    -Pandas
-
-    -pyspark
-
-    -spark SQL   
+  
   
 ## Analysis of the results of the Classification report
 
