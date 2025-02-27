@@ -1,0 +1,4 @@
+"income_category","total_loans","approved_loans","rejected_loans"
+"Low Income (<25K)","1557","349","1208"
+"Middle Income (25K-75K)","24838","18300","6538"
+"High Income (>75K)","18600","16346","2254"
