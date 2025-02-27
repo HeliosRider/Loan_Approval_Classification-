@@ -1,43 +1,49 @@
-# DRAFT Project Four Assignment
+**Modeling results of the Loan CSV Data file**
 
-  
-  
-## Analysis of the results of the Classification report
+**Logistic Regression Model with the Classification Report**
 
-1. Precision:
-    # Low-risk loan (0.89): Out of all the instances predicted as low-risk loans, 89% were actually low-risk.
-    # High-risk loan (0.72): Out of all the instances predicted as high-risk loans, 72% were actually high-risk.
-    # Precision measures the accuracy of positive predictions. A high precision means that when the model predicts a class, it's correct most of the time.
+Key Metrics:
 
-2. Recall:
-    # Low-risk loan (0.93): 93% of all actual low-risk loans were correctly predicted by the model.
-    # High-risk loan (0.59): 59% of all actual high-risk loans were correctly predicted.
-    # Recall measures the ability of the model to find all the relevant cases (true positives). A high recall means that the model doesn't miss many positive instances.
+1. Precision: 
+This is the ratio of correctly predicted positive observations to the total predicted positives. For each class, it tells us how many of the predicted instances were actually positive.
 
-3. F1-score:
-    # Low-risk loan (0.91): The harmonic mean of precision and recall for the low-risk class.
-    # High-risk loan (0.65): The harmonic mean of precision and recall for the high-risk class.
-    # The F1-score is the balance between precision and recall. It's useful when you need a balance between both metrics, especially when you have imbalanced classes. In this case, the F1-score is higher for the low-risk loans, indicating that the model is better at classifying low-risk loans.
+    - Low-risk loan: Precision = 0.85
+    - High-risk loan: Precision = 0.76
 
+2. Recall (Sensitivity or True Positive Rate): 
+This is the ratio of correctly predicted positive observations to all the actual positives. It tells us how many actual positives were correctly predicted.
 
-After adjsuting the weights in recall
+    - Low-risk loan: Recall = 0.96
+    - High-risk loan: Recall = 0.42
 
-1. Precision:
-    # Low-risk loan (0.91): Precision for low-risk loans is high, meaning that when the model predicts a loan to be low-risk, it is correct most of the time.
-    # High-risk loan (0.58): Precision for high-risk loans has decreased. Only 58% of the high-risk loans predicted by the model are actually high-risk.
-    # Precision represents how accurate the model's positive predictions are, and the increase in recall for the high-risk loan class comes at the cost of reduced precision.
+3. F1-Score: 
+This is the weighted average of Precision and Recall. It gives a better measure of the incorrectly classified cases than the Accuracy metric. It's useful when the class distribution is imbalanced.
 
-2. Recall:
-    # Low-risk loan (0.85): Recall for low-risk loans has decreased slightly, meaning the model is missing a bit more low-risk loans now compared to before.
-    # High-risk loan (0.70): Recall for high-risk loans has improved significantly (from 0.59 to 0.70). This shows that the model is now correctly identifying more high-risk loans, which is the main goal of adjusting class weights.
-    # Recall measures how well the model identifies actual positive cases. The improvement in recall for high-risk loans indicates that the class weights have helped the model focus more on identifying high-risk loans.
+    - Low-risk loan: F1-Score = 0.90
+    - High-risk loan: F1-Score = 0.54
 
-3. F1-score:
-    # Low-risk loan (0.88): F1-score for low-risk loans is still relatively high.
-    # High-risk loan (0.63): The F1-score for high-risk loans has increased slightly, reflecting the improvement in recall.
-    # The F1-score is the harmonic mean of precision and recall, balancing both. For    high-risk loans, the trade-off between precision and recall results in an F1-score of 0.63, which indicates a moderate balance.
+4. Accuracy: This is the overall percentage of correctly classified instances across all classes.
 
-4. Accuracy:
-    # Overall Accuracy (0.82): The overall accuracy has dropped from 0.86 to 0.82, which is expected because the model is now focusing more on identifying high-risk loans, which is a smaller class. While this might reduce accuracy, it's improving recall for the minority class (high-risk loans), which can be more important in certain scenarios (e.g., predicting loan defaults).
+    - Accuracy = 0.84 (84%)
 
+Observation:
+
+1. Low-risk loan (majority class): 
+The model performs well with high recall (0.96) and decent precision (0.85), meaning it's good at predicting low-risk loans, but not perfect.
+
+2. High-risk loan (minority class): 
+The model struggles with predicting high-risk loans, with a lower recall (0.42), meaning it's failing to identify many high-risk loans. However, it does a reasonable job at precision (0.76), meaning that when it does predict high-risk, it's often correct.
+
+3. Imbalanced Dataset Impact:
+Since there are more low-risk loans (8749) compared to high-risk loans (2500), this is an imbalanced classification problem. The model tends to favor the majority class, leading to a higher recall for low-risk loans but poorer performance for high-risk loans.
+
+**Trained Deep Neural Network Model**
+
+Obervation:
+
+- Loss: 
+A value such as 0.1759 means that the predictions made by the model are fairly close to the true values, but there is still room for improvement.
+
+- Accuracy: 
+A value like 0.9233 (or 92.33%) indicates that 92.33% of the model's predictions are correct on the test data, which is quite high and indicates good generalization.
 
